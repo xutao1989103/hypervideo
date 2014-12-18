@@ -1,0 +1,17 @@
+<div class='videoContainer'>
+	<div ng-repeat="video in videos" id="div_video_{{ $index }}" class="video" ng-show="showVideo[video]">
+    <video id="video_{{ $index }}" class='video-js vjs-default-skin video' src='{{ video }}'
+            controls></video>	
+	
+	</div>
+
+
+    <div class='problemContainer' ng-show='showProblem'>
+        <div ng-repeat='choice in choices'>
+            <button id='choiceContainer_{{ $index }}' class='choiceContainer' ng-class='isSelected[$index]'
+                    ng-click='chooseOption($index)' ng-disabled="hasSelected">
+                {{ choiceMsg[$index] }}
+            </button>
+        </div>
+    </div>
+</div>
